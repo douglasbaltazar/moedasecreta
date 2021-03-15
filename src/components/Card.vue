@@ -18,6 +18,7 @@
       <v-btn
         text
         color="deep-purple accent-4"
+        :href="moeda.link"
       >
         Painel Mercado
       </v-btn>
