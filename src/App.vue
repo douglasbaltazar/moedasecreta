@@ -1,29 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+  <v-app>
+    <v-app-bar
+      app
+      color="darkgrey"
+      dark
+    >
+      <div class="d-flex align-center">
+        <v-img
+          alt="Vuetify Logo"
+          class="shrink mr-2"
+          contain
+          src="https://i.pinimg.com/originals/62/d1/26/62d126dcfc3c38c276627e6a251a6c25.jpg"
+          transition="scale-transition"
+          width="40"
+        />
+        <span>Moeda Secreta</span>
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-btn
+        href="https://www.mercadobitcoin.com.br/plataforma/dashboard/"
+        target="_blank"
+        text
+      >
+        <span class="mr-2">Mercado Bitcoin</span>
+        <v-icon>mdi-open-in-new</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <MoedaSecreta/>
+    </v-main>
+  </v-app>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue';
+import MoedaSecreta from './components/MoedaSecreta.vue';
 
-@Component({
+export default Vue.extend({
+  name: 'App',
+
   components: {
-    HelloWorld,
+    MoedaSecreta,
   },
-})
-export default class App extends Vue {}
-</script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  data: () => ({
+    //
+  }),
+});
+</script>
